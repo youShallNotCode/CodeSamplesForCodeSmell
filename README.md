@@ -18,6 +18,14 @@ The code examples contained in these files are designed to **demonstrate common 
 
 ---
 
+### Additional Resources:
+
+- [ refactoring.guru/refactoring/smells ](https://refactoring.guru/refactoring/smells)
+⁠
+- [ luzkan.github.io/smells ](https://luzkan.github.io/smells/)
+
+- [ reddit.com/r/learnprogramming/all_code_smells_oneliner_guide ](https://www.reddit.com/r/learnprogramming/comments/x2ewxi/all_code_smells_oneliner_guide/)
+
 Feel free to explore, learn, and contribute! If you find new smells or better fixes, your pull requests are welcome.
 
 Happy coding! 🚀

@@ -1,0 +1,297 @@
+//this is a ditto copy of a Reddit Post by u/Kabathebear in r/learnprogramming
+//link -> https://www.reddit.com/r/learnprogramming/comments/x2ewxi/all_code_smells_oneliner_guide/
+//Iam pastebinning it here just in case if the post goes down
+
+Code smells are certain indicators of problems in code and express that something is wrong. It is important to pay attention to code smells.
+
+These aren't dogmas but indicate that values may be under threat.
+Values in terms of evolvability, correctness, production efficiency, and continuous improvement.
+
+It is important to take action if a code smell makes code unchangeable.
+Hence I made a list from A to Z to be used to quickly identify code smells.
+
+Afraid To Fail
+When you add extra checks to a method (outside its scope) to avoid exceptions.
+
+Solution: A method that can fail should fail explicitly.
+
+Alternative Classes with Different Interfaces
+Two separate classes provide one or many method/s for an identical action.
+
+Solution: Don't Repeat Yourself by merging or outsourcing.
+
+Base Class Depends on Subclass
+If a child class adapts, the parent class needs adaptation too.
+
+Solution: Leave the kids alone. If they change, parents stay the same.
+
+Binary Operator in Name
+When your function name combines two operations in the name, it won't stick to the SRP.
+
+Solution: Each function shall do one thing and do it well.
+
+Boolean Blindness
+Boolean arguments of a function fool you about what the value true
+or false
+truly does.
+
+Solution: Don't create functions that accept boolean parameters.
+
+Callback Hell
+Callbacks are intentionally good, but chaining them results in something bad.
+
+Solution: Make small interchangeable steps to gain a sequence of actions.
+
+Clever Code
+Showing off your skills can quickly end in over-complicated code, even for you.
+
+Solution: Keep it simple and focus on readability.
+
+Combinatorial Explosion
+It occurs whenever code does almost the same, often in large if-else
+branches.
+
+Solution: If code does almost do the same, separate and delegate.
+
+Complicated Boolean Expression
+Combining multiple boolean expressions disguised as function names to a larger combinatorial condition.
+
+Solution: Don’t come up with function names like bottle.consumed(), but with something like should_be_consumed(bottle).
+
+Complicated Regex Expression
+Leave the code with complex regex-patterns nobody can comprehend.
+
+Solution: Provide examples in a comment near your regex pattern.
+
+Conditional Complexity
+Logic blocks with if statements require you to consider all possible paths ending in a memory game.
+
+Solution: Split different paths into multiple subpaths into distinctive classes.
+
+Data Clump
+When you think a couple of variables isn't worth creating a separate instance.
+
+Solution: Create a separate class to combine multiple single variables or introduce a Parameter Object.
+
+Dead Code
+Often occurs in large if-else blocks ending up with so many paths that nobody remembers how they're used anymore.
+
+Solution: Dead code is already saved in the Git-History; delete it immediately.
+
+Divergent Change
+When a class grows and becomes complex, it's easy to overlook the fact that it already implements multiple responsibilities.
+
+Solution: Divide into multiple classes or create an outside function.
+
+Dubious Abstraction
+It's challenging to tell if a given name for abstraction is right.
+
+Solution: Functions Should Descend Only One Level of Abstraction, Code at Wrong Level of Abstraction, Choose Names at the Appropriate Level of Abstraction — Robert C. Martin
+
+Duplicated Code
+There's nothing worse than redundant code. Sorry, my bad. Dead code is worse.
+
+Solution: Don't Repeat Yourself***.***
+
+Fallacious Comment
+Explaining the WHAT in a comment traverses to a lie over time.
+
+Solution: Comment only the WHY of your code.
+
+Fallacious Method Name
+If you name a method/function a certain way but it doesn't do what it was named for. For example, getBeer() but does return a soda-water 😕
+
+Solution: If your function is named a certain way to fulfill the promise made by that name.
+
+Fate over Action
+Whenever you assume that data objects can't be changed by anyone except your own actions in code.
+
+Solution: Don't depend on the object's state because it may be mutated from elsewhere.
+
+Feature Envy
+Methods inside a class reach out to other classes besides their own instantiation.
+
+Solution: Methods are made to guarantee to interact with the object itself.
+
+Flag Argument
+An entire operation of a function/method depends on a flag parameter? Congratulations! You have combined two functions into one.
+
+Solution: Split the function into separate ones.
+
+Global Data
+Having a global scope available for everyone turns your entire application into one global scope.
+
+Solution: Encapsulate your application into various data sections and only as many links as needed.
+
+Hidden Dependencies
+Calling a method of a class that resolves hidden dependencies.
+
+Solution: Use the Dependency Inversion and let the caller deliver all needed goods.
+
+Imperative Loops
+They are hard to read and error-prone, especially for rising IndexErrors.
+
+Solution: Use pipelines such as array methods of JavaScript.
+
+Inappropriate Static
+When a method accepts arguments of polymorphic behavior (classes), but it is defined as static.
+
+Solution: Statics should be reserved for behavior that will never change.
+
+Incomplete Library Class
+When a library does not fulfill 100% of your needs, you tend to abandon it and rewrite the entire functionality.
+
+Solution: Take what is there and extend it to get 100% of what you need.
+
+Inconsistent Names
+Different synonyms for one and the same word. For example, car, vehicle, automobile.
+
+Solution: Make one name and make the entire team stick to it.
+
+Inconsistent Style
+Every team member has their own coding style, not agreeing to a convention.
+
+Solution: Create a coding convention and stick to it.
+
+Indecent Exposure
+Showing private internals of a class to the outside world.
+
+Solution: Expose only what's truly needed to interact with a class.
+
+Insider Trading
+Modules & classes know too much about each other, just like curious neighbors.
+
+Solution: Modules & classes should concentrate on the bare minimum to work together.
+
+Large Class
+Putting code in an existing class rather than creating a new one when the new logic adds another responsibility.
+
+Solution: Keep classes small and responsible for a single thing.
+
+Lazy Element
+Now you've gone too far in separating principles. If your element does too little to stand on its own, it is probably better to include it in another entity.
+
+Solution: Small entities are good, but getting too granular is bad.
+
+Long Method
+They are harder to understand, harder to change or extend, and developers are truly reading more lines than they write.
+
+Solution: Keep methods short and precise.
+
+Long Parameter List
+0–2 arguments 👌 3 arguments 🙅 4 arguments ☠️.
+
+Solution: Stick to 0 -2 arguments to ensure a clean function/method and also stick to the SRP***.***
+
+Magic Number
+Random values like 1000
+, 99
+used anywhere to compare certain conditions make you ask yourself, "What the 🦆?!".
+
+Solution: Create constants like MAX_STUDENTS_IN_ROOM to give those numbers a meaning everybody can comprehend.
+
+Message Chain
+Collecting data to get information while addressing a single function call.
+
+Solution: Don't ask for manipulation. Provide everything needed and give a command to manipulate.
+
+Middle Man
+If your class delegates requests to other classes, then you made a middle man.
+
+Solution: Keep the number of middlemen as little as possible.
+
+Mutable Data
+Mutable data can cause unexpected failures in the remaining code by causing hard-to-spot bugs because it occurs in rare situations.
+
+Solution: Don't use data that might change, freeze it, or make copies. Overall avoid references to mutable data.
+
+Null Check
+When your code is peppered with null or undefined checks.
+
+Solution: Create a specific class that is being handled if null or undefined occurs. One reason to fail and one handler to handle.
+
+Obscured Intent
+Sometimes, you forget about something you see as obvious is very complex to others, especially when you intentionally compact the code to make it seem brighter than it is.
+
+Solution: Write clear & intentional code that expresses itself. Don't write compressed code for fewer lines.
+
+Oddball Solution
+Different parts of code solve the same problem differently.
+
+Solution*: Use interfaces to unify a single solution.*
+
+Parallel Inheritance Hierarchies
+You get this when an inheritance tree depends on another inheritance tree by composition, and you need to make a subclass for another class to create a subclass for one.
+
+Solution: Create a single hierarchy by moving parts of your "duplicated" classes.
+
+Primitive Obsession
+If you have a string or an integer that mimics being an abstract concept, like an object.
+
+Solution: Create proper objects and handle them like objects.
+
+Refused Bequest
+Inheriting all from a parent class but only using a subset of functionality.
+
+Solution*: When inheriting, make sure to take over all functionality and extend on that. Otherwise, you are better off outsourcing the subset.*
+
+Required Setup or Teardown Code
+When creating an instance and it needs to be initialized further.
+
+Solution*: Take every functionality into account and initialize it when an instance is created.*
+
+Shotgun Surgery
+Unnecessarily changing multiple classes for a single modification.
+
+Solution*: If something has to be changed, there should be only one place to be modified.*
+
+Side Effects
+Additional actions are executed that aren't explicitly related to the function.
+
+Solution: Keep functions/methods having a single responsibility. Doing only one thing at once.
+
+Special Case
+Stumbling upon a very complex if
+statement or value checking before any processing begins.
+
+Solution: Proper handling of complex if-statements or assuring default values.
+
+Speculative Generality
+Despite your best intentions, you created extra features to prepare for the future, but those features never turn out to be useful.
+
+Solution: Only code what you'll need to solve the problem today.
+
+Status Variable
+If you find a status variable that stores information about what's happening and is used as a switch later.
+
+Solution: Use built-in enumerates or methods.
+
+Temporary Field
+When a temporary variable refers to one that is only used in a certain situation. For example, saving day, month, year plus a combination of them in separate fields.
+
+Solution: Skip using temporary fields for decluttering classes. Use a method to get a concatenated version of multiple fields.
+
+Tramp Data
+Whenever data gets passed through a long chain of calls isn't consistent with what each routine interface presents.
+
+Solution: Keep the functionality as close to the data as possible.
+
+Type Embedded in Name
+Variables that give a strong hint about their data type.
+
+Solution: The type annotation or type hint doesn't need to be mentioned twice through the variable name.
+
+Uncommunicative Name
+The naming of variables, functions & classes that are misleading.
+
+Solution: You want a name that's meaningful and not misleading.
+
+Vertical Separation
+When the creation and usage of variables are detached by declaring them in one place way before the main logic starts.
+
+Solution: Code with well-written methods & classes should have collapsible places that are good enough to organize.
+
+"What" Comment
+There's a good chance that a comment describing what's going on in a particular section is trying to hide some other Code Smell.
+
+Solution: Don't create "What" comments and be a particular skeptic when reading the code below a "What" comment.
