@@ -24,7 +24,11 @@ The code examples contained in these files are designed to **demonstrate common 
 ⁠
 - [ luzkan.github.io/smells ](https://luzkan.github.io/smells/)
 
-- [ reddit.com/r/learnprogramming/all_code_smells_oneliner_guide ](https://www.reddit.com/r/learnprogramming/comments/x2ewxi/all_code_smells_oneliner_guide/)
+- [ reddit.com/r/learnprogramming/all_code_smells_oneliner_guide ](https://www.reddit.com/r/learnprogramming/comments/x2ewxi/all_code_smells_oneliner_guide/) (this is also pastebinned in a file called additionalNotes inside this repo)
+
+- "Refactoring: Improving the Design of Existing Code" by Martin Fowler and Kent Beck
+
+- "Clean Code" by Robert C. Martin
 
 Feel free to explore, learn, and contribute! If you find new smells or better fixes, your pull requests are welcome.
 
