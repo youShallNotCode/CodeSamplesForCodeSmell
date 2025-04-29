@@ -1,10 +1,10 @@
 public class OrderItem
 {
-    public decimal Price { get; set; }
-    public int Quantity { get; set; }
+    private decimal price { get; set; }
+    private int quantity { get; set; }
 
     public decimal GetTotalPrice()
     {
-        return Price * Quantity;
+        return price * quantity;
     }
 }

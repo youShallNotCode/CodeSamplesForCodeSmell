@@ -1,12 +1,12 @@
 public class Transaction
 {
-    public decimal Amount { get; set; }
-    public decimal Tax { get; set; }
-    public decimal Discount { get; set; }
+    private decimal amount { get; set; }
+    private decimal tax { get; set; }
+    private decimal discount { get; set; }
 
     public decimal GetTotalAmount()
     {
-        return Amount + Tax - Discount;
+        return amount + tax - discount;
     }
 }
 
